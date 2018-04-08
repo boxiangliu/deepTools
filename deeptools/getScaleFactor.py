@@ -149,6 +149,10 @@ def fraction_kept(args, stats):
     else:
         chrom_sizes = list(zip(bam_handle.references, bam_handle.lengths))
 
+    # By-pass sampling if the user requests exact scaling factors
+    if hasattr(args, 'exactScaling') and args.exactScaling:
+        distanceBetweenBins = 50001
+
     while total < num_needed_to_sample and distanceBetweenBins > 50000:
         # If we've iterated, then halve distanceBetweenBins
         distanceBetweenBins /= 2

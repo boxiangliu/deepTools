@@ -62,6 +62,7 @@
 
                 @ADVANCED_OPTS_READ_PROCESSING@
                 $advancedOpt.skipNAs
+                $advancedOpt.exactScaling
 
                 #if str($advancedOpt.ignoreForNormalization).strip() != '':
                     --ignoreForNormalization '$advancedOpt.ignoreForNormalization'
@@ -161,6 +162,7 @@
                 <expand macro="read_processing_options" />
 
                 <expand macro="skipNAs" />
+                <expand macro="exactScaling" />
 
                 <param argument="--ignoreForNormalization" type="text" value="" size="50"
                     label="regions that should be excluded for calculating the scaling factor"

@@ -53,6 +53,7 @@
 
                 @ADVANCED_OPTS_READ_PROCESSING@
                 $advancedOpt.skipNAs
+                $advancedOpt.exactScaling
 
                 #if str($advancedOpt.ignoreForNormalization).strip() != '':
                     --ignoreForNormalization $advancedOpt.ignoreForNormalization
@@ -122,6 +123,7 @@
                         chromosomes, like male and female samples. Example: chrX chrM" />
 
                 <expand macro="skipNAs" />
+                <expand macro="exactScaling" />
                 <expand macro="read_processing_options" />
 
                 <param argument="--MNase" type="boolean" truevalue="--MNase" falsevalue=""

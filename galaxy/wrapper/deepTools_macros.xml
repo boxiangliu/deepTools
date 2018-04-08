@@ -603,6 +603,16 @@ is vital to you, select Yes below.">
                  (default: False)" />
     </xml>
 
+    <xml name="exactScaling">
+        <param argument="--exactScaling" type="boolean" truevalue="--exactScaling" falsevalue="" checked="False"
+            label="Compute an exact scaling factor?"
+            help="Instead of estimating scaling factors compute an exact one. This is only
+                 useful in cases where you are performing filtering (e.g., --filterRNAstrand)
+                 and normalizing the output bigWig files AND find that the reported fraction
+                 of filtered alignments is inaccurate. This option causes deepTools to process
+                 the entire BAM/CRAM file twice, which is much more time consuming." />
+    </xml>
+
     <xml name="input_save_matrix_values">
         <param argument="--saveMatrix" type="boolean" label="Save the matrix of values underlying the heatmap"/>
     </xml>

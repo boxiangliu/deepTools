@@ -106,6 +106,14 @@ def get_optional_args():
                           choices=['forward', 'reverse'],
                           default=None)
 
+    optional.add_argument('--exactScaling',
+                          help='Instead of estimating scaling factors compute an exact one. This is only '
+                          'useful in cases where you are performing filtering (e.g., --filterRNAstrand) '
+                          'and normalizing the output bigWig files AND find that the reported fraction '
+                          'of filtered alignments is inaccurate. This option causes deepTools to process '
+                          'the entire BAM/CRAM file twice, which is much more time consuming.',
+                          action='store_true')
+
     return parser
 
 
